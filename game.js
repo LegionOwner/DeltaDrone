@@ -1,6 +1,8 @@
 // game.js
 // Main orchestrator: initializes Leaflet map, overlay canvas, game loop, UI, spawn system, auto-PVO and more.
-
+window.addEventListener('DOMContentLoaded', () => {
+  // сюда вставь весь код меню
+});
 // --- Map & overlay setup ---
 const map = L.map('map', { zoomControl: true }).setView([50.45, 30.52], 11);
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution: '© OpenStreetMap contributors' }).addTo(map);
@@ -369,7 +371,3 @@ back2.addEventListener('click', () => {
 });
 
 entities.targets.push(new Target('cruise', [50.7, 30.2], 230, 520));
-
-window.addEventListener('DOMContentLoaded', () => {
-  // сюда вставь весь код меню
-});
