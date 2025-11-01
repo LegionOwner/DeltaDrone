@@ -371,3 +371,9 @@ back2.addEventListener('click', () => {
 });
 
 entities.targets.push(new Target('cruise', [50.7, 30.2], 230, 520));
+
+playBtn.addEventListener('click', () => {
+  menu.style.display = 'none';
+  document.getElementById('startBtn').click();
+});
+
