@@ -335,45 +335,43 @@ entities.targets.push(new Target('plane', [50.6, 30.4], 180, 160));
 entities.targets.push(new Target('drone', [50.52, 30.7], 90, 40));
 
 // === МЕНЮ ===
-const menu = document.getElementById('menu');
-const menuMain = document.querySelector('.menu-content');
-const options = document.getElementById('options');
-const about = document.getElementById('about');
-const playBtn = document.getElementById('playBtn');
-const optionsBtn = document.getElementById('optionsBtn');
-const aboutBtn = document.getElementById('aboutBtn');
-const back1 = document.getElementById('backBtn1');
-const back2 = document.getElementById('backBtn2');
+window.addEventListener('DOMContentLoaded', () => {
+  const menu = document.getElementById('menu');
+  const menuMain = document.querySelector('.menu-content');
+  const options = document.getElementById('options');
+  const about = document.getElementById('about');
 
-playBtn.addEventListener('click', () => {
-  menu.style.display = 'none'; // спрятать меню
-  document.getElementById('startBtn').click(); // запустить игру
+  const playBtn = document.getElementById('playBtn');
+  const optionsBtn = document.getElementById('optionsBtn');
+  const aboutBtn = document.getElementById('aboutBtn');
+  const back1 = document.getElementById('backBtn1');
+  const back2 = document.getElementById('backBtn2');
+
+  playBtn.addEventListener('click', () => {
+    console.log('Play clicked');
+    menu.style.display = 'none';
+    const startBtn = document.getElementById('startBtn');
+    if (startBtn) startBtn.click();
+    else console.warn('❗ Кнопка #startBtn не найдена!');
+  });
+
+  optionsBtn.addEventListener('click', () => {
+    menuMain.classList.add('hidden');
+    options.classList.remove('hidden');
+  });
+
+  aboutBtn.addEventListener('click', () => {
+    menuMain.classList.add('hidden');
+    about.classList.remove('hidden');
+  });
+
+  back1.addEventListener('click', () => {
+    options.classList.add('hidden');
+    menuMain.classList.remove('hidden');
+  });
+
+  back2.addEventListener('click', () => {
+    about.classList.add('hidden');
+    menuMain.classList.remove('hidden');
+  });
 });
-
-optionsBtn.addEventListener('click', () => {
-  menuMain.classList.add('hidden');
-  options.classList.remove('hidden');
-});
-
-aboutBtn.addEventListener('click', () => {
-  menuMain.classList.add('hidden');
-  about.classList.remove('hidden');
-});
-
-back1.addEventListener('click', () => {
-  options.classList.add('hidden');
-  menuMain.classList.remove('hidden');
-});
-
-back2.addEventListener('click', () => {
-  about.classList.add('hidden');
-  menuMain.classList.remove('hidden');
-});
-
-entities.targets.push(new Target('cruise', [50.7, 30.2], 230, 520));
-
-playBtn.addEventListener('click', () => {
-  menu.style.display = 'none';
-  document.getElementById('startBtn').click();
-});
-
