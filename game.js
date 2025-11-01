@@ -370,3 +370,6 @@ back2.addEventListener('click', () => {
 
 entities.targets.push(new Target('cruise', [50.7, 30.2], 230, 520));
 
+window.addEventListener('DOMContentLoaded', () => {
+  // сюда вставь весь код меню
+});
