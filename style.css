@@ -44,3 +44,48 @@ button.primary{background:var(--accent);color:#000;border:none}
   #hud{left:8px;top:8px;min-width:200px;padding:8px}
   #spawner{right:8px;top:8px}
 }
+
+/* === Меню === */
+#menu {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, rgba(0,20,0,0.95) 0%, black 100%);
+  color: lime;
+  font-family: monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 2000;
+}
+.menu-content {
+  text-align: center;
+}
+.menu-content h1 {
+  font-size: 42px;
+  color: #9f9;
+  margin-bottom: 30px;
+}
+#menu button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: black;
+  color: lime;
+  border: 1px solid lime;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+#menu button:hover {
+  background: lime;
+  color: black;
+}
+.hidden {
+  display: none;
+}
+#options, #about {
+  text-align: center;
+  color: #9f9;
+}
